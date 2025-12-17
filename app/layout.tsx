@@ -126,7 +126,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${geistMono.variable} antialiased bg-[#0A0E14]`}
+        className={`${inter.variable} ${geistMono.variable} antialiased bg-background font-sans`}
         suppressHydrationWarning
       >
         <ThemeProvider
