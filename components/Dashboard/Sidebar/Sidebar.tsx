@@ -526,9 +526,9 @@ export default function DashboardWrapper({ children }: DashboardWrapperProps) {
                       }}
                     className="flex items-center gap-3 flex-1 min-w-0 hover:opacity-80 transition-opacity">
                     <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center shrink-0">
-                      <span className="text-pink-600 font-semibold text-sm">
-                        OR
-                      </span>
+                     <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center shrink-0">
+                      <Image src="/images/avatar.png" alt="User" width={40} height={40} />
+                     </div>
                     </div>
                     <motion.div
                       animate={{
