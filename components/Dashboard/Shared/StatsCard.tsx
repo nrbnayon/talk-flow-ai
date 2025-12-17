@@ -1,7 +1,7 @@
-import { ArrowUpRight, ArrowDownRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { HugeiconsIcon } from "@hugeicons/react";
+import { HugeiconsIcon, IconSvgElement } from "@hugeicons/react";
 import { TradeDownIcon, TradeUpIcon } from "@hugeicons/core-free-icons";
+import Image from "next/image";
 
 interface StatsCardProps {
   label: string;
@@ -9,56 +9,87 @@ interface StatsCardProps {
   trend: number;
   trendLabel?: string;
   className?: string;
+  icon?: IconSvgElement;
+  image?: string;
 }
 
 export function StatsCard({
   label,
   value,
   trend,
-  trendLabel,
+  trendLabel = "from last month",
   className,
+  icon,
+  image,
 }: StatsCardProps) {
   const isPositive = trend >= 0;
 
   return (
     <div
       className={cn(
-        "bg-gray dark:bg-gray-800 p-6 rounded-md shadow-none border border-[#E9EAEB] dark:border-gray-700 flex flex-col justify-between h-full",
+        "bg-gray px-5 py-4 rounded-md flex flex-col h-full",
         className
       )}
+      style={{
+        boxShadow: "6px 6px 40px 0px #00000014",
+      }}
     >
-      <h3 className="text-primary dark:text-gray-400 text-sm font-medium mb-2">
-        {label}
-      </h3>
-      <div className="flex items-end justify-between">
-        <div className="text-3xl font-bold text-primary dark:text-gray-50">
-          {value}
-        </div>
-        <div className="flex items-center gap-1 text-xs">
-          <span
-            className={cn(
-              "font-medium",
-              isPositive ? "text-green-500" : "text-secondary"
-            )}
+      <div className="flex items-center justify-between">
+        <h3 className="text-secondary text-sm font-medium">{label}</h3>
+        {(image || icon) && (
+          <div
+            className="flex items-center justify-center"
+            style={{
+              width: "60px",
+              height: "60px",
+              borderRadius: "18px",
+              padding: "15px",
+              background: "linear-gradient(180deg, #FFFFFF -103.51%, #1E1E1E 100%)",
+            }}
           >
-            {isPositive ? "+" : ""}
-            {trend}%
-          </span>
+            {image ? (
+              <Image src={image} alt={label} width={30} height={30} />
+            ) : icon ? (
+              <HugeiconsIcon
+                icon={icon}
+                size={30}
+                className="text-foreground"
+                strokeWidth={1.5}
+              />
+            ) : null}
+          </div>
+        )}
+      </div>
+      <div className="flex flex-col gap-1 -mt-3">
+        <div className="text-2xl font-bold text-foreground">{value}</div>
+        <div className="flex items-center gap-1 text-xs mt-2">
           {isPositive ? (
             <HugeiconsIcon
               icon={TradeUpIcon}
-              size={24}
-              className="text-green-500"
+              size={20}
+              className="text-[#00b69b]"
               strokeWidth={1.5}
             />
           ) : (
             <HugeiconsIcon
               icon={TradeDownIcon}
-              size={24}
-              className="text-secondary"
+              size={20}
+              className="text-red"
               strokeWidth={1.5}
             />
           )}
+          <span
+            className={cn(
+              "font-medium text-base",
+              isPositive ? "text-[#00b69b]" : "text-red"
+            )}
+          >
+            {isPositive ? "+" : ""}
+            {trend}%
+          </span>
+          <span className="text-secondary text-base">
+            {isPositive ? "Up" : "Down"} {trendLabel}
+          </span>
         </div>
       </div>
     </div>
