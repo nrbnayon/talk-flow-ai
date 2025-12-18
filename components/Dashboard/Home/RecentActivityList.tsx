@@ -52,11 +52,11 @@ export function RecentActivityList({ className }: RecentActivityListProps) {
         <h3 className="text-lg font-semibold text-foreground">Recent Activity</h3>
         <p className="text-sm text-secondary mt-1">Latest actions across the platform</p>
       </div>
-      <div className="space-y-4">
+      <div className="space-y-3">
         {recentActivityData.map((activity, index) => (
-          <div key={index} className="flex items-start gap-3">
+          <div key={index} className="flex items-start gap-3 bg-background rounded-md p-3">
             <div 
-              className="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-white text-sm font-semibold flex-shrink-0"
+              className="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-white text-sm font-semibold flex-shrink-0"
             >
               {getInitials(activity.name)}
             </div>
@@ -64,9 +64,8 @@ export function RecentActivityList({ className }: RecentActivityListProps) {
               <div className="flex items-start justify-between gap-2">
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-foreground truncate">
-                    {activity.name}
+                    {activity.name} - <span className="text-sm text-secondary truncate">{activity.action}</span>
                   </p>
-                  <p className="text-sm text-secondary truncate">{activity.action}</p>
                 </div>
               </div>
               <span className="text-xs text-secondary mt-1 block">{activity.time}</span>

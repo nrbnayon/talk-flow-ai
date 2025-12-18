@@ -42,18 +42,21 @@ const badgeStyles: Record<string, string> = {
 export function PendingClaimsList({ className }: PendingClaimsListProps) {
   return (
     <div className={`bg-gray rounded-md p-6 ${className}`} style={{ boxShadow: "6px 6px 40px 0px #00000014" }}>
-      <div className="mb-4">
+      <div className="mb-6">
         <h3 className="text-lg font-semibold text-foreground">Pending Claims</h3>
         <p className="text-sm text-secondary mt-1">Claims requiring your attention</p>
       </div>
-      <div className="space-y-4">
+      <div className="space-y-3">
         {pendingClaimsData.map((claim, index) => (
           <div 
             key={index} 
-            className="flex flex-col gap-2 pb-4 border-b border-gray-700 last:border-b-0 last:pb-0"
+            className="flex flex-col gap-2 bg-background rounded-md p-4"
           >
             <span 
-              className={`text-xs px-3 py-1 rounded-full inline-block w-fit ${badgeStyles[claim.badge] || 'bg-gray-600 text-white'}`}
+              className={`text-xs px-3 py-1 rounded-full inline-block w-fit`}
+              style={{
+                background: "linear-gradient(180deg, #FFFFFF -103.51%, #1E1E1E 100%)",
+              }}
             >
               {claim.badge}
             </span>
