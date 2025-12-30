@@ -12,6 +12,7 @@ interface UsersTableProps {
   showPagination?: boolean;
   searchQuery?: string;
   isLoading?: boolean;
+  users?: User[];
 }
 
 export function UsersTable({
@@ -20,8 +21,9 @@ export function UsersTable({
   showPagination = false,
   searchQuery = "",
   isLoading = false,
+  users,
 }: UsersTableProps) {
-  const [allUsers] = useState<User[]>(usersData);
+  const [allUsers] = useState<User[]>(users || usersData);
   const [currentPage, setCurrentPage] = useState(1);
 
   const filteredUsers = allUsers.filter((u) => {

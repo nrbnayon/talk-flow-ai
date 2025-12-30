@@ -1,13 +1,19 @@
 "use client";
 
 import { UsersTable } from "@/components/Dashboard/Users/UsersTable";
+import { AddUserModal } from "@/components/Dashboard/Users/AddUserModal";
 import { Search, Plus } from "lucide-react";
 import DashboardHeader from "../Shared/DashboardHeader";
 import { useState, useEffect } from "react";
+import { User } from "@/types/user";
+import { usersData } from "@/data/usersData";
+import { toast } from "sonner";
 
 export function UsersPageContent() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
+  const [isAddUserModalOpen, setIsAddUserModalOpen] = useState(false);
+  const [users, setUsers] = useState<User[]>(usersData);
 
   // Debounce/simulate search delay
   useEffect(() => {
@@ -17,6 +23,16 @@ export function UsersPageContent() {
 
     return () => clearTimeout(timer);
   }, [searchQuery]);
+
+  const handleAddUser = (newUser: Omit<User, "id">) => {
+    const id = String(users.length + 1);
+    const userWithId: User = {
+      ...newUser,
+      id,
+    };
+    setUsers((prev) => [userWithId, ...prev]);
+    toast.success("User added successfully");
+  };
 
   // Determine filter based on pathname
   return (
@@ -29,7 +45,10 @@ export function UsersPageContent() {
         <div className="bg-gray rounded-xl shadow-xs p-6">
           <div className="flex justify-between items-center">
             <h2 className="text-lg font-semibold text-foreground">User List</h2>
-            <button className="flex items-center gap-2 px-4 py-2 bg-gradient-purple text-white text-sm font-medium rounded-sm transition-colors cursor-pointer hover:opacity-90">
+            <button
+              onClick={() => setIsAddUserModalOpen(true)}
+              className="flex items-center gap-2 px-4 py-2 bg-gradient-purple text-white text-sm font-medium rounded-sm transition-colors cursor-pointer hover:opacity-90"
+            >
               <Plus className="w-4 h-4" />
               Add User
             </button>
@@ -57,9 +76,15 @@ export function UsersPageContent() {
             showPagination={true}
             searchQuery={searchQuery}
             isLoading={isSearching}
+            users={users}
           />
         </div>
       </div>
+      <AddUserModal
+        isOpen={isAddUserModalOpen}
+        onClose={() => setIsAddUserModalOpen(false)}
+        onAddUser={handleAddUser}
+      />
     </>
   );
 }
