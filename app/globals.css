@@ -190,9 +190,9 @@
       @apply bg-transparent;
     }
 
-    &::-webkit-scrollbar-thumb {
+    /* &::-webkit-scrollbar-thumb {
       @apply bg-[var(--muted-foreground)] rounded-full;
-    }
+    } */
 
     &::-webkit-scrollbar-thumb:hover {
       @apply bg-primary;
@@ -204,7 +204,7 @@
   }
 
   /* Dark mode scrollbar */
-  .dark .scrollbar-custom {
+  /* .dark .scrollbar-custom {
     &::-webkit-scrollbar-thumb {
       @apply bg-[var(--muted-foreground)];
     }
@@ -214,5 +214,5 @@
     }
 
     scrollbar-color: var(--muted-foreground) transparent;
-  }
+  } */
 }
