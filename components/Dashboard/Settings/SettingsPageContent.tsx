@@ -72,7 +72,7 @@ export function SettingsPageContent() {
         description="Welcome back! Here's an dashboard of your platform."
       />
 
-      <div className="p-4 md:p-8 w-full w-full mx-auto space-y-8">
+      <div className="p-4 md:p-8 w-full mx-auto space-y-8">
         {/* Account Information Section */}
         <div className="bg-[#1A1C20] rounded-xl p-8 shadow-sm border border-gray-800">
           <div className="mb-6">

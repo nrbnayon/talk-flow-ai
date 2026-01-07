@@ -17,7 +17,6 @@ import {
   LogOut,
   PanelLeftOpen,
   PanelRightOpen,
-  Search,
   ChevronDown,
   ChevronUp,
   X,
@@ -60,7 +59,7 @@ export default function DashboardWrapper({ children }: DashboardWrapperProps) {
   const [startWidth, setStartWidth] = useState(0);
   const [, setUserResizedWidth] = useState<number | null>(null);
   const [manualToggle, setManualToggle] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, ] = useState("");
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
