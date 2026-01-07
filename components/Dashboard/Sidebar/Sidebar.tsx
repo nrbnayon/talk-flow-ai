@@ -59,7 +59,7 @@ export default function DashboardWrapper({ children }: DashboardWrapperProps) {
   const [startWidth, setStartWidth] = useState(0);
   const [, setUserResizedWidth] = useState<number | null>(null);
   const [manualToggle, setManualToggle] = useState(false);
-  const [searchQuery, ] = useState("");
+  const [searchQuery] = useState("");
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
@@ -516,18 +516,24 @@ export default function DashboardWrapper({ children }: DashboardWrapperProps) {
               {/* User Profile */}
               <div className="mt-4 pt-4 border-t border-border">
                 <div className="flex items-center gap-3 px-3">
-                  <Link 
-                    href="/profile" 
+                  <Link
+                    href="/profile"
                     onClick={() => {
-                        if (window.innerWidth < 768) {
-                          setOpen(false);
-                        }
-                      }}
-                    className="flex items-center gap-3 flex-1 min-w-0 hover:opacity-80 transition-opacity">
+                      if (window.innerWidth < 768) {
+                        setOpen(false);
+                      }
+                    }}
+                    className="flex items-center gap-3 flex-1 min-w-0 hover:opacity-80 transition-opacity"
+                  >
                     <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center shrink-0">
-                     <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center shrink-0">
-                      <Image src="/images/avatar.png" alt="User" width={40} height={40} />
-                     </div>
+                      <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center shrink-0">
+                        <Image
+                          src="/images/avatar.png"
+                          alt="User"
+                          width={40}
+                          height={40}
+                        />
+                      </div>
                     </div>
                     <motion.div
                       animate={{
@@ -536,9 +542,7 @@ export default function DashboardWrapper({ children }: DashboardWrapperProps) {
                       }}
                       className="flex-1 min-w-0"
                     >
-                      <p className="text-base font-medium truncate">
-                        Nayon
-                      </p>
+                      <p className="text-base font-medium truncate">Nayon</p>
                       <p className="text-base text-secondary truncate">
                         Super Admin
                       </p>
@@ -612,7 +616,7 @@ export default function DashboardWrapper({ children }: DashboardWrapperProps) {
                 <LogOut className="h-6 w-6 text-red-600" />
               </div>
 
-              <h3 className="text-lg font-semibold text-primary mb-2">
+              <h3 className="text-lg font-semibold text-white mb-2">
                 Confirm Logout
               </h3>
 
