@@ -12,7 +12,7 @@ export default function DashboardPage() {
     <div className="min-h-screen">
       <DashboardHeader
         title="Admin Dashboard"
-        description="Welcome back! Here's an overview of your platform."
+        description="Welcome back! Here's an dashboard of your platform."
       />
 
       {/* Stats Cards */}

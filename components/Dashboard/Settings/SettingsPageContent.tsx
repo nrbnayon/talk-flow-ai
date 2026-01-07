@@ -69,16 +69,19 @@ export function SettingsPageContent() {
     <>
       <DashboardHeader
         title="Admin Dashboard"
-        description="Welcome back! Here's an overview of your platform."
+        description="Welcome back! Here's an dashboard of your platform."
       />
 
       <div className="p-4 md:p-8 w-full w-full mx-auto space-y-8">
-        
         {/* Account Information Section */}
         <div className="bg-[#1A1C20] rounded-xl p-8 shadow-sm border border-gray-800">
           <div className="mb-6">
-            <h2 className="text-xl font-semibold text-white">Account Information</h2>
-            <p className="text-sm text-gray-400 mt-1">Update your account details</p>
+            <h2 className="text-xl font-semibold text-white">
+              Account Information
+            </h2>
+            <p className="text-sm text-gray-400 mt-1">
+              Update your account details
+            </p>
           </div>
 
           <form onSubmit={handleAccountSubmit} className="space-y-6">
@@ -125,7 +128,9 @@ export function SettingsPageContent() {
         <div className="bg-[#1A1C20] rounded-xl p-8 shadow-sm border border-gray-800">
           <div className="mb-6">
             <h2 className="text-xl font-semibold text-white">Security</h2>
-            <p className="text-sm text-gray-400 mt-1">Manage password and security settings</p>
+            <p className="text-sm text-gray-400 mt-1">
+              Manage password and security settings
+            </p>
           </div>
 
           <form onSubmit={handleSecuritySubmit} className="space-y-6">
@@ -148,7 +153,11 @@ export function SettingsPageContent() {
                   onClick={() => setShowCurrentPassword(!showCurrentPassword)}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-300 focus:outline-none"
                 >
-                  {showCurrentPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  {showCurrentPassword ? (
+                    <EyeOff className="w-4 h-4" />
+                  ) : (
+                    <Eye className="w-4 h-4" />
+                  )}
                 </button>
               </div>
             </div>
@@ -172,7 +181,11 @@ export function SettingsPageContent() {
                   onClick={() => setShowNewPassword(!showNewPassword)}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-300 focus:outline-none"
                 >
-                  {showNewPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  {showNewPassword ? (
+                    <EyeOff className="w-4 h-4" />
+                  ) : (
+                    <Eye className="w-4 h-4" />
+                  )}
                 </button>
               </div>
             </div>
@@ -196,7 +209,11 @@ export function SettingsPageContent() {
                   onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                   className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-300 focus:outline-none"
                 >
-                  {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                  {showConfirmPassword ? (
+                    <EyeOff className="w-4 h-4" />
+                  ) : (
+                    <Eye className="w-4 h-4" />
+                  )}
                 </button>
               </div>
             </div>

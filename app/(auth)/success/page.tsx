@@ -39,7 +39,7 @@ export default function CongratulationsPage() {
 
         {/* Next Button */}
         <Link
-          href="/overview"
+          href="/dashboard"
           className="inline-flex items-center gap-2 bg-primary/80 hover:bg-primary text-white px-8 py-3 rounded-lg font-medium  transition-colors duration-200"
         >
           Next

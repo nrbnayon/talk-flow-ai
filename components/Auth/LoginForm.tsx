@@ -69,7 +69,7 @@ export default function LoginForm() {
 
         // Redirect to dashboard after a short delay
         setTimeout(() => {
-          router.push("/overview");
+          router.push("/dashboard");
         }, 1000);
       } else {
         // Log the form data to console
@@ -88,7 +88,7 @@ export default function LoginForm() {
 
         // Redirect to dashboard after a short delay
         setTimeout(() => {
-          router.push("/overview");
+          router.push("/dashboard");
         }, 1000);
       }
     } catch (error) {
