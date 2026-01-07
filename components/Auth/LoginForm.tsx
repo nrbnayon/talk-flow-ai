@@ -103,26 +103,26 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col-reverse lg:flex-row bg-primary dark:bg-primary-dark">
+    <div className="min-h-screen flex flex-col-reverse lg:flex-row bg-primary">
       {/* Right Side - Login Form */}
-      <div className="flex-1 bg-primary dark:bg-primary-dark flex items-center justify-center p-4 sm:p-6 lg:p-8 order-1 lg:order-2">
-        <div className="w-full max-w-sm sm:max-w-md lg:max-w-xl p-4 sm:p-8 rounded-2xl sm:rounded-3xl lg:rounded-4xl border-none shadow-none bg-white dark:bg-gray-800">
-          <div className="w-full flex justify-center items-center">
+      <div className="flex-1 bg-primary flex items-center justify-center p-4 sm:p-6 lg:p-8 order-1 lg:order-2">
+        <div className="w-full max-w-sm sm:max-w-md lg:max-w-xl p-4 sm:p-8 rounded-2xl sm:rounded-3xl lg:rounded-4xl border-none shadow-none bg-white ">
+          <div className="w-full flex justify-center items-center mb-4">
             <Image
-              src="/icons/logo.svg"
+              src="/images/logo.jpeg"
               alt="logo"
-              width={120}
-              height={120}
-              className="w-[100px] h-[100px] md:w-[200px] md:h-[200px]"
+              width={1000}
+              height={1000}
+              className="w-25 h-25 md:w-50 md:h-50 rounded-2xl"
             />
           </div>
           <CardHeader className="text-center">
-            <h2 className="text-lg sm:text-2xl text-primary dark:text-white">
+            <h2 className="text-lg sm:text-2xl text-primary font-bold">
               Welcome Back!
             </h2>
           </CardHeader>
-          <CardHeader className="text-center my-2">
-            <h2 className="text-lg text-secondary">
+          <CardHeader className="text-center">
+            <h2 className="text-lg text-primary/80 font-medium">
               Enter your email and password to access your account.
             </h2>
           </CardHeader>
@@ -136,7 +136,7 @@ export default function LoginForm() {
               <div className="space-y-2">
                 <label
                   htmlFor="email"
-                  className="text-foreground text-sm sm:text-base font-semibold block"
+                  className="text-primary text-sm sm:text-base font-semibold"
                 >
                   Email
                 </label>
@@ -145,7 +145,7 @@ export default function LoginForm() {
                     id="email"
                     type="text"
                     placeholder="Enter your email"
-                    className={`pl-4 pr-10 h-10 sm:h-12 rounded-md shadow-none text-foreground placeholder:text-muted-foreground text-sm sm:text-base ${
+                    className={`pl-4 pr-10 h-10 sm:h-12 rounded-md shadow-none text-sm sm:text-base text-primary placeholder:text-secondary ${
                       errors.email
                         ? "border-error focus:border-error"
                         : "input-focus"
@@ -166,7 +166,7 @@ export default function LoginForm() {
               <div className="space-y-2">
                 <label
                   htmlFor="password"
-                  className="text-foreground text-sm sm:text-base font-semibold block"
+                  className="text-primary text-sm sm:text-base font-semibold block"
                 >
                   Password
                 </label>
@@ -175,7 +175,7 @@ export default function LoginForm() {
                     id="password"
                     type={showPassword ? "text" : "password"}
                     placeholder="Enter your password"
-                    className={`pl-4 pr-10 h-10 sm:h-12 rounded-md shadow-none text-foreground placeholder:text-muted-foreground text-sm sm:text-base ${
+                    className={`pl-4 pr-10 h-10 sm:h-12 rounded-md shadow-none text-sm sm:text-base text-primary placeholder:text-secondary ${
                       errors.password
                         ? "border-error focus:border-error"
                         : "input-focus"
@@ -190,9 +190,9 @@ export default function LoginForm() {
                     disabled={isLoading}
                   >
                     {showPassword ? (
-                      <EyeOff className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground" />
+                      <EyeOff className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                     ) : (
-                      <Eye className="h-4 w-4 sm:h-5 sm:w-5 text-muted-foreground" />
+                      <Eye className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                     )}
                   </button>
                 </div>

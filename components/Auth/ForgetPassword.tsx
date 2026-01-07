@@ -83,10 +83,11 @@ export default function ForgetPassword() {
               </Link>
               <div className="w-full flex justify-center items-center">
                 <Image
-                  src="/icons/logo.svg"
+                  src="/images/logo.jpeg"
                   alt="logo"
-                  width={165}
-                  height={120}
+                  width={1000}
+                  height={1000}
+                  className="w-25 h-25 md:w-50 md:h-50 rounded-2xl"
                 />
               </div>
             </div>
@@ -108,7 +109,7 @@ export default function ForgetPassword() {
               <div className="space-y-2">
                 <label
                   htmlFor="email"
-                  className="text-foreground text-sm sm:text-base font-medium block"
+                  className="text-primary text-sm sm:text-base font-medium block"
                 >
                   Email Address
                 </label>
@@ -117,7 +118,7 @@ export default function ForgetPassword() {
                     id="email"
                     type="email"
                     placeholder="Enter your email address"
-                    className={`pl-4 pr-10 h-10 sm:h-12 rounded-md shadow-none text-foreground placeholder:text-muted-foreground text-sm sm:text-base ${
+                    className={`pl-4 pr-10 h-10 sm:h-12 rounded-md shadow-none text-primary placeholder:text-muted-foreground text-sm sm:text-base ${
                       errors.email
                         ? "border-error focus:border-error"
                         : "input-focus"
