@@ -19,20 +19,20 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
   ),
   title: {
-    default: "Talk Flow AI - Dashboard Management System",
+    default: "Talk Flow AI - AI Interaction & Claims Management Dashboard",
     template: "%s | Talk Flow AI",
   },
   description:
-    "Talk Flow AI - Modern dashboard management system for managing users, donations, projects, and leader requests. Streamline your workflow with our intuitive admin panel.",
+    "Talk Flow AI - A cutting-edge administrative platform for managing AI-driven voice interactions, claims workflows, and user diagnostics. Streamline your operations with our intuitive dashboard.",
   keywords: [
     "Talk Flow AI",
-    "Dashboard",
-    "Management System",
+    "AI Dashboard",
+    "Claims Management",
+    "Voice AI",
+    "Interaction Analytics",
     "Admin Panel",
     "User Management",
-    "Donation Management",
-    "Project Management",
-    "Admin Dashboard",
+    "AI Call Tracking",
   ],
   authors: [{ name: "Talk Flow AI Team" }],
   creator: "Talk Flow AI",
@@ -58,9 +58,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: "Talk Flow AI",
-    title: "Talk Flow AI - Dashboard Management System",
+    title: "Talk Flow AI - AI Interaction & Claims Management",
     description:
-      "Modern dashboard management system for managing users, donations, projects, and leader requests.",
+      "Modern administrative platform for managing AI-driven voice interactions and claims workflows.",
     images: [
       {
         url: "/icons/logo.svg",
@@ -72,9 +72,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Talk Flow AI - Dashboard Management System",
+    title: "Talk Flow AI - AI Interaction Management",
     description:
-      "Modern dashboard management system for managing users, donations, projects, and leader requests.",
+      "Advanced dashboard for tracking AI calls, processing claims, and managing user interaction data.",
     images: ["/icons/logo.svg"],
     creator: "@nrbnayon",
   },
@@ -106,11 +106,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
-              name: "Walking Witness",
-              applicationCategory: "Dashboard Management System",
+              name: "Talk Flow AI",
+              applicationCategory: "Business Dashboard",
               operatingSystem: "Web",
               description:
-                "Modern dashboard management system for managing users, donations, projects, and leader requests.",
+                "Modern administrative platform for managing AI-driven voice interactions and claims workflows.",
               offers: {
                 "@type": "Offer",
                 price: "0",

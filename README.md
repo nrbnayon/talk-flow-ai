@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎙️ Talk Flow AI - AI Interaction & Claims Management Dashboard
 
-## Getting Started
+## 🌟 Overview
+**Talk Flow AI** is a cutting-edge administrative platform designed to manage and analyze AI-driven voice interactions and claims workflows. Built with a focus on speed, aesthetics, and data-driven insights, it provides a seamless experience for administrators to monitor performance, manage users, and handle complex reporting.
 
-First, run the development server:
+The platform leverages a modern dark-themed aesthetic with vibrant gradients, providing a premium feel for advanced AI operations management.
+
+---
+
+## 🚀 Key Features
+
+-   **🤖 AI Interaction Hub**: 
+    -   Schedule and manage AI-driven calls.
+    -   View detailed interaction histories and transcripts.
+    -   Monitor live call status and metrics.
+-   **📊 Advanced Analytics & Reporting**: 
+    -   Interactive dashboards with **Recharts**.
+    -   Weekly activity tracking and claims trend analysis.
+    -   Detailed reports on resolution times and claim types.
+-   **📑 Claims Management**: 
+    -   Centralized tracking system for all pending and processed claims.
+    -   Workflow-based interaction for claim resolution.
+-   **📁 Document Center**: 
+    -   Integrated document management system for maintaining project records.
+-   **👤 User & Profile Administration**: 
+    -   Comprehensive user management tools.
+    -   Personalized profile settings and role-based access control.
+-   **🔐 Secure Authentication**: 
+    -   Robust auth flow including Login, OTP Verification, and Password Recovery.
+
+---
+
+## 🛠️ Tech Stack
+
+-   **Framework**: [Next.js 16 (App Router)](https://nextjs.org/)
+-   **Language**: [TypeScript](https://www.typescriptlang.org/)
+-   **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) with custom design tokens.
+-   **Animations**: [Framer Motion](https://www.framer.com/motion/) for smooth UI transitions.
+-   **UI Components**: [Radix UI](https://www.radix-ui.com/) for accessible, high-performance components.
+-   **Icons**: [HugeIcons](https://hugeicons.com/), [Lucide React](https://lucide.dev/), and Tabler Icons.
+-   **Charts**: [Recharts](https://recharts.org/) for data visualization.
+-   **Forms**: [React Hook Form](https://react-hook-form.com/) + [Zod](https://zod.dev/) for validation.
+-   **Notifications**: [Sonner](https://sonner.stevenly.all/) for elegant toast alerts.
+
+---
+
+## 📂 Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+├── app/                  # Next.js App Router (Auth & Dashboard groups)
+├── components/           # UI Components (Dashboard, Auth, and primitives)
+│   ├── Dashboard/        # Feature-specific dashboard components
+│   ├── Auth/             # Authentication-related components
+│   └── ui/               # Base Radix-based UI elements
+├── data/                 # Static data and mock definitions
+├── hooks/                # Custom React hooks
+├── lib/                  # Shared utilities and validation logic
+├── public/               # Static assets (icons, logo, etc.)
+└── types/                # TypeScript type definitions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
+- Node.js 18.x or higher
+- npm or yarn
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/nrbnayon/talk-flow-ai.git
+    cd talk-flow-ai
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3.  **Run the development server**:
+    ```bash
+    npm run dev
+    ```
+    Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-## Deploy on Vercel
+### Build and Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To create an optimized production build:
+```bash
+npm run build
+npm start
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🎨 Design System
+
+Talk Flow AI uses a custom design system defined in `globals.css`:
+-   **Primary Background**: `#0A0E14` (Deep Night)
+-   **Accent Colors**: Vibrant purples and reds for interactive elements.
+-   **Typography**: Optimized Geist and Inter font family for maximum readability.
+-   **Glassmorphism**: Subtle effects for cards and overlays.
+
+---
+
+Built with ❤️ by the Talk Flow AI Team.
