@@ -100,11 +100,9 @@ export async function proxy(request: NextRequest) {
   // ============================================
   let user = null;
   let isAuthenticated = false;
-  const isDevelopment = process.env.NODE_ENV !== "production";
-
   if (accessToken) {
-    // Development mode: Accept dummy credentials
-    if (isDevelopment && accessToken === "dev-admin-token") {
+    // The deployed demo uses this fixed session token until a real auth API is connected.
+    if (accessToken === "dev-admin-token") {
       user = { email: "admin@gmail.com", role: "admin" };
       isAuthenticated = true;
       if (!userRole) {

@@ -25,6 +25,7 @@ export default function LoginForm() {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm<LoginFormData>({
     resolver: zodResolver(loginValidationSchema),
@@ -42,12 +43,12 @@ export default function LoginForm() {
       // Simulate API call delay
       await new Promise((resolve) => setTimeout(resolve, 1500));
 
-      // Development dummy credentials check
-      const isDevLogin =
+      // Demo credentials are intentionally available in the deployed demo.
+      const isDemoLogin =
         data.email === "admin@gmail.com" && data.password === "admin123";
 
-      if (isDevLogin) {
-        // Set development cookies for dummy login
+      if (isDemoLogin) {
+        // Set the demo session cookies used by the proxy.
         const expires = new Date();
         expires.setTime(expires.getTime() + 7 * 24 * 60 * 60 * 1000); // 7 days
         const expiresString = expires.toUTCString();
@@ -191,7 +192,17 @@ export default function LoginForm() {
 
               {/* Remember Me and Forgot Password */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0">
-                <div className="flex items-center space-x-2"></div>
+                <button
+                  type="button"
+                  className="text-xs font-semibold text-primary/60 transition-colors hover:text-primary hover:underline"
+                  onClick={() => {
+                    setValue("email", "admin@gmail.com");
+                    setValue("password", "admin123");
+                  }}
+                  disabled={isLoading}
+                >
+                  Use demo credentials
+                </button>
                 <Link
                   href="/forgot-password"
                   className="text-red font-semibold text-xs sm:text-sm hover:text-red hover:underline transition-colors text-center sm:text-right"
