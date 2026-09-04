@@ -310,7 +310,7 @@ export default function DashboardWrapper({ children }: DashboardWrapperProps) {
     setShowLogoutModal(false);
 
     // Redirect to login
-    router.push("/login");
+    router.push("/");
   };
 
   const handleCancelLogout = () => {
