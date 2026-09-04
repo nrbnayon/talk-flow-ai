@@ -663,7 +663,7 @@ const Logo = ({ open }: { open: boolean }) => {
         <Image
           className="w-full h-full object-contain"
           alt="TalkFlow Logo"
-          src="/images/logo.png"
+          src="/images/logo.jpeg"
           width={open ? 120 : 40}
           height={open ? 120 : 40}
           priority
