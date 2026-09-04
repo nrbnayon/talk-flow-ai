@@ -628,13 +628,13 @@ export default function DashboardWrapper({ children }: DashboardWrapperProps) {
               <div className="flex gap-3 justify-center">
                 <button
                   onClick={handleCancelLogout}
-                  className="px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-lg transition-colors duration-200"
+                  className="px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-200 rounded-lg transition-colors duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={handleConfirmLogout}
-                  className="px-4 py-2 text-sm font-medium text-white bg-gradient-red rounded-lg transition-colors duration-200"
+                  className="px-4 py-2 text-sm font-medium text-white bg-gradient-red rounded-lg transition-colors duration-200 cursor-pointer hover:bg-gradient-red-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
                 >
                   Logout
                 </button>
