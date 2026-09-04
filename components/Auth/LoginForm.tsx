@@ -192,17 +192,7 @@ export default function LoginForm() {
 
               {/* Remember Me and Forgot Password */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0">
-                <button
-                  type="button"
-                  className="text-xs font-semibold text-primary/60 transition-colors hover:text-primary hover:underline"
-                  onClick={() => {
-                    setValue("email", "admin@gmail.com");
-                    setValue("password", "admin123");
-                  }}
-                  disabled={isLoading}
-                >
-                  Use demo credentials
-                </button>
+                <span className="text-xs text-primary/50">Demo access available</span>
                 <Link
                   href="/forgot-password"
                   className="text-red font-semibold text-xs sm:text-sm hover:text-red hover:underline transition-colors text-center sm:text-right"
@@ -225,6 +215,24 @@ export default function LoginForm() {
                 ) : (
                   "Sign In"
                 )}
+              </Button>
+
+              <Button
+                type="button"
+                variant="outline"
+                className="h-14 w-full rounded-md border-2 border-[#d53f33] text-base font-bold text-[#d53f33] transition hover:bg-[#d53f33] hover:text-white disabled:cursor-not-allowed disabled:opacity-50"
+                onClick={() => {
+                  setValue("email", "admin@gmail.com");
+                  setValue("password", "admin123");
+                  void onSubmit({
+                    email: "admin@gmail.com",
+                    password: "admin123",
+                    rememberMe: false,
+                  });
+                }}
+                disabled={isLoading || isSubmitting}
+              >
+                {isLoading ? "Signing in as admin..." : "One-click Demo Admin Login"}
               </Button>
             </form>
           </div>
