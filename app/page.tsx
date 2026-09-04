@@ -38,7 +38,7 @@ export default function Home() {
             <div className="absolute -inset-8 rounded-[40px] bg-[#e7644d]/10 blur-3xl" />
             <div className="relative overflow-hidden rounded-[26px] border border-white/15 bg-[#131a1e] p-3 shadow-2xl shadow-black/40">
               <div className="flex items-center justify-between border-b border-white/10 px-4 py-3"><div className="flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-[#e7644d]" /><span className="text-xs text-[#b7bfbd]">Live operations</span></div><span className="text-[10px] uppercase tracking-[.18em] text-[#7d8987]">Talk Flow / 01</span></div>
-              <Image src="/images/project.png" alt="Talk Flow AI analytics dashboard" width={900} height={600} className="mt-3 h-auto w-full rounded-2xl object-cover object-top opacity-90" />
+              <Image src="/images/project.jpg" alt="Talk Flow AI analytics dashboard" width={900} height={600} className="mt-3 h-auto w-full rounded-2xl object-cover object-top opacity-90" />
               <div className="grid grid-cols-3 gap-2 p-2 pt-3"><div className="rounded-xl bg-white/5 p-3"><p className="text-[10px] text-[#899391]">Interactions</p><p className="mt-1 text-lg font-semibold">2,841</p><p className="text-[10px] text-[#70c49d]">+18.4%</p></div><div className="rounded-xl bg-white/5 p-3"><p className="text-[10px] text-[#899391]">Resolved</p><p className="mt-1 text-lg font-semibold">94.2%</p><p className="text-[10px] text-[#70c49d]">+6.8%</p></div><div className="rounded-xl bg-[#e7644d]/15 p-3"><p className="text-[10px] text-[#f5a08f]">In progress</p><p className="mt-1 text-lg font-semibold">128</p><p className="text-[10px] text-[#f5a08f]">Live now</p></div></div>
             </div>
           </div>
