@@ -44,7 +44,7 @@ export default function LoginForm() {
 
       // Development dummy credentials check
       const isDevLogin =
-        data.email === "admin@gmail.com" && data.password === "admin";
+        data.email === "admin@gmail.com" && data.password === "admin123";
 
       if (isDevLogin) {
         // Set development cookies for dummy login
@@ -72,24 +72,10 @@ export default function LoginForm() {
           router.push("/dashboard");
         }, 1000);
       } else {
-        // Log the form data to console
-        console.log("Login Form Data:", {
-          email: data.email,
-          password: data.password,
-          rememberMe: data.rememberMe,
-          timestamp: new Date().toISOString(),
+        toast.error("Invalid credentials", {
+          description: "Use the demo admin email and password to continue.",
+          duration: 3000,
         });
-
-        // Simulate successful login
-        toast.success("Login successful!", {
-          description: `Welcome back, ${data.email}!`,
-          duration: 2000,
-        });
-
-        // Redirect to dashboard after a short delay
-        setTimeout(() => {
-          router.push("/dashboard");
-        }, 1000);
       }
     } catch (error) {
       console.error("Login error:", error);

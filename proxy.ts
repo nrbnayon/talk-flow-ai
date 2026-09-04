@@ -20,7 +20,17 @@ const PUBLIC_ROUTES = [
 ];
 
 // Protected routes (authentication required)
-const PROTECTED_ROUTES = ["/dashboard", "/profile", "/settings", "/admin"];
+const PROTECTED_ROUTES = [
+  "/dashboard",
+  "/ai-interaction",
+  "/documents",
+  "/privacy-policy",
+  "/profile",
+  "/reports",
+  "/settings",
+  "/users",
+  "/admin",
+];
 
 // Admin-only routes (requires admin role)
 const ADMIN_ROUTES = ["/admin"];
